@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funny Dogs Meme Swipe</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>🐶 Funny Dogs Meme Swipe</h1>
+      <p class="subtitle">Swipe, tap, or use arrow keys to discover and rate meme dogs.</p>
+
+      <section id="meme-card" class="meme-card" aria-live="polite">
+        <div class="meme-caption top" id="caption-top"></div>
+        <img id="dog-image" alt="Funny dog meme" />
+        <div class="accessory" id="hat"></div>
+        <div class="accessory" id="eyes"></div>
+        <div class="accessory" id="mouth"></div>
+        <div class="meme-caption bottom" id="caption-bottom"></div>
+      </section>
+
+      <div class="controls">
+        <button id="prev" type="button">⬅️ Previous</button>
+        <button id="shuffle" type="button">🎲 Remix</button>
+        <button id="next" type="button">Next ➡️</button>
+        <button id="auto" type="button" aria-pressed="false">▶️ Auto Swipe</button>
+      </div>
+
+      <section class="rating">
+        <h2>Rate this dog</h2>
+        <div id="rating-buttons" class="rating-buttons" role="group" aria-label="Rate this meme from one to five stars"></div>
+        <p id="rating-summary">No ratings yet.</p>
+      </section>
+
+      <section class="leaderboard">
+        <h2>🏆 Crowd Favorites</h2>
+        <ol id="leaderboard"></ol>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
