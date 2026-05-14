@@ -50,6 +50,8 @@ const elements = {
   leaderboard: document.getElementById('leaderboard')
 };
 
+const SWIPE_THRESHOLD = 35;
+
 let currentIndex = 0;
 let autoSwipeId = null;
 let touchStartX = 0;
@@ -80,6 +82,7 @@ function renderRatingButtons() {
     const button = document.createElement('button');
     button.type = 'button';
     button.textContent = '⭐'.repeat(score);
+    button.setAttribute('aria-label', `Rate ${score} star${score > 1 ? 's' : ''}`);
     if (ratings[url] === score) {
       button.classList.add('active');
     }
@@ -179,8 +182,8 @@ function wireEvents() {
 
   elements.card.addEventListener('touchend', (event) => {
     const deltaX = event.changedTouches[0].clientX - touchStartX;
-    if (deltaX > 35) go(-1);
-    if (deltaX < -35) go(1);
+    if (deltaX > SWIPE_THRESHOLD) go(-1);
+    if (deltaX < -SWIPE_THRESHOLD) go(1);
   });
 }
 
