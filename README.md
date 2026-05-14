@@ -4,7 +4,7 @@ A meme-style dog gallery website with swipe navigation, random accessories, and 
 
 ## Run locally
 
-Open `/home/runner/work/funnyDogs/funnyDogs/index.html` in a browser.
+Open `index.html` in a browser.
 
 ## Features
 

@@ -54,7 +54,12 @@ let currentIndex = 0;
 let autoSwipeId = null;
 let touchStartX = 0;
 
-const ratings = JSON.parse(localStorage.getItem('funnyDogsRatings') || '{}');
+let ratings = {};
+try {
+  ratings = JSON.parse(localStorage.getItem('funnyDogsRatings') || '{}');
+} catch {
+  ratings = {};
+}
 
 function rand(list) {
   return list[Math.floor(Math.random() * list.length)];
